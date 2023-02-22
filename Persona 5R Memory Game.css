@@ -1,0 +1,196 @@
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: rgb(3, 1, 1);
+}
+
+
+.btn {
+    display: block;
+    color: black;
+    background-color: white;
+    border-color: black;
+    padding: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    font: bold;
+    font-size: large;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+#start-button {
+    position: relative;
+    top: -90px;
+    left: 250px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#restart-button {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: -300px;
+    left: -20px;
+}
+
+
+.wrapper {
+    perspective: 600px;
+    height: 650px;
+    width: 1100px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.cards, .card, .view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card {
+    cursor: pointer;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 5 - 10px);
+    position: relative;
+    left: -20px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+
+.view {
+    height: 70%;
+    width: 80%;
+    background: darkgray;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 10);
+    transition: transform 0.15s linear;
+    backface-visibility: hidden;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.frontCard {
+    position: absolute;
+}
+
+.card.flip .frontCard {
+    transform: rotateY(360deg); 
+}
+.card.flip .backCard {
+    transform: rotateY(360deg);
+}
+
+
+.card .backCard img {
+    max-width: 150px;
+}
+
+.card .frontCard img {
+    max-width: 150px;
+    max-height: 100px;
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+}
+
+
+#start {
+    height: 60vh;
+    color: rgb(3, 1, 1);
+    position: relative;
+}
+
+
+#title {
+    font-size: 6rem;
+    perspective: 600px;
+}
+
+#title > p {
+    transform: rotateX(45deg);
+    line-height: 0.20px;
+    text-align: center;
+    color: rgb(250, 5, 5);
+    position: relative;
+    top: -50px;
+    font-size: 8rem;
+}
+
+#start.playing {
+    margin-top: -200vh;
+    transition: margin-top 1s;
+    position: absolute;
+    transition: ease-out;
+    
+}
+
+#start.playing + #game {
+    display: flex;
+}
+
+#game {
+    display: none;
+}
+
+#game .row {
+    width: 100%;
+}
+
+#end {
+    display: none;
+}
+
+#end.game-over {
+    display: flex;
+    background-color: rgba(6, 6, 6, 0.56);
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    color:red;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#end h1 {
+    -webkit-text-stroke: 5px rgb(92, 11, 11);
+}
+
+#end h1 {
+    font-size: 8rem;
+}
+
+
+
+
